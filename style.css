@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: #3f3572; 
 }
 
 .header {
@@ -35,7 +36,7 @@
 }
 
 .navbar i {
-    font-size: 36px;
+    font-size: 32px;
     display: none;
 }
 
@@ -46,12 +47,19 @@
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 100px;
+    gap: 70px;
 }
 
 .navbar-link {
     text-decoration: none;
-    color: black;
+}
+
+.navbar-link:hover {
+   color: #b1a5e3;
+}
+
+body {
+    background: #ece3fa;
 }
 
 main {
@@ -59,17 +67,18 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 #hero {
+    max-width: 850px;
     margin-top: 80px;
     display: flex;
     padding: 70px 0px;
-    width: 90%;
+    width: 80%;
     justify-content: center;
-    background: #757F9A;  
-    background: -webkit-linear-gradient(to right, #B1A5E3, #757F9A);  
-    background: linear-gradient(to right, #B1A5E3, #757F9A); 
+    background: rgb(174,218,238);
+    background: radial-gradient(circle, rgba(174,218,238,1) 0%, rgba(208,199,251,1) 100%); 
 }
 
 .hero-presentation {
@@ -84,6 +93,10 @@ main {
     font-size: 40px;
     display: flex;
     flex-direction: column;
+}
+
+.hero-presentation h1 span {
+    color: aliceblue;
 }
 
 .hero-presentation p {
@@ -117,28 +130,133 @@ main {
 
 #hero img {
     width: 300px;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 30px 38px 24px; 
 }
 
 #about {
+    background: #f1ecf9;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 80%;
     max-width: 850px;
-    padding: 30px 0px;
+    padding: 50px 20px;
     font-weight: 300;
     text-align: center;
 }
 
+#beneficios {
+    background: rgb(174,218,238);
+    background: radial-gradient(circle, rgba(174,218,238,1) 0%, rgba(208,199,251,1) 100%);
+    width: 80%;
+    max-width: 850px;
+    padding: 30px 20px;
+    font-weight: 300;
+    text-align: center;
+    gap: 50px;
+}
+
+#beneficios h1 {
+    color: aliceblue;
+}
+
+#beneficios h1 , #beneficios p{
+    padding: 15px;
+}
+
+.beneficios-content {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.benef-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#products {
+    max-width: 850px;
+    width: 80%;
+    background: #f1ecf9;
+    text-align: center;
+}
+
+#products h1, #products p {
+    margin: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-item {
+    margin: 30px 10px;
+    max-width: 225px;
+    height: 300px;
+    background-color: aliceblue;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    text-align: left;
+    font-weight: 100;
+}
+
+.card-item p {
+    margin-left: 15px;
+}
+
+.infocard {
+    margin: 20px 20px;
+    width: 175px;
+    height: 175px;
+    border-radius: 5px;
+}
+
+#contact {
+    width: 80%;
+    max-width: 850px;
+    padding: 30px 20px;
+    font-weight: 300;
+    text-align: left;
+    background: rgb(232, 232, 232);
+}
+
+.contacto h1, .contacto p, .contacto a{
+    padding: 20px;
+    color: #b1a5e3;
+}
+
+.contacto a {
+    text-decoration: none;
+}
+
+.contacto p a:hover {
+    color: black;
+}
+
+footer {
+    height: 50px;
+    text-align: center;
+}
+footer p {
+    padding: 15px;
+}
+
 @media (max-width: 992px) {
+    #hero {
+        width: 80%;
+    }
     .hero-presentation {
         text-align: center;
-        width: 90%;
         align-items: center;
     }
     .hero-presentation h1 {
         display: block;
-        width: 100%;
     }
     .hero-presentation p {
         max-width: 80%;
@@ -152,6 +270,10 @@ main {
     }
     #about {
         font-size: 15px;
+    }
+    .beneficios-content {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -172,7 +294,7 @@ main {
     .navbar i {
         display: block;
     }
-    #toggle-menu :checked + .navbar-list {
+    #toggle-menu:checked ~ .navbar-list {
         transform: translate(0%);
         transition: all 0.4s ease-in;
     }
